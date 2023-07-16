@@ -1,6 +1,6 @@
 import MyPage from "./MyPage.vue";
 import type { Meta, StoryObj } from "@storybook/vue3";
-import {INITIAL_VIEWPORTS} from "@storybook/addon-viewport";
+// import {INITIAL_VIEWPORTS} from "@storybook/addon-viewport";
 
 type Story = StoryObj<typeof MyPage>;
 
