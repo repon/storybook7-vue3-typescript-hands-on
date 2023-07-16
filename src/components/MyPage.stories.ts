@@ -11,35 +11,9 @@ const meta: Meta<typeof MyPage> = {
     components: { MyPage },
     template: "<MyPage />",
   }),
-  parameters: {
-    viewport: {
-      viewports: {
-        pc: {
-          name: "Min PC Layout",
-          styles: {
-            width: "992px",
-            height: "100%",
-          }
-        },
-        mobile: {
-          name: "Min Mobile Layout",
-          styles: {
-            width: "375px",
-            height: "100%",
-          }
-        }
-      },
-    },
-  },
 }
 
-export const ForPc: Story = {
-  parameters: {
-    viewport: {
-      defaultViewport: "pc",
-    },
-  },
-}
+export const ForPc: Story = {}
 
 export const ForMobile: Story = {
   parameters: {
