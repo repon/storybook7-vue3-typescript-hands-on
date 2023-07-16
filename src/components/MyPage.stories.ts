@@ -33,6 +33,20 @@ const meta: Meta<typeof MyPage> = {
   },
 }
 
-export const Default: Story = {}
+export const ForPc: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "pc",
+    },
+  },
+}
+
+export const ForMobile: Story = {
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile",
+    },
+  },
+}
 
 export default meta
