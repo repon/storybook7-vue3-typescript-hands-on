@@ -1,3 +1,5 @@
+import { Decorator } from "@storybook/vue3"
+
 /**
  * Storybook全体でのparametersのデフォルト値を定義する
  */
@@ -26,6 +28,10 @@ export const parameters = {
   },
 }
 
-export const decorators = []
+export const decorators: Decorator[] = [
+  () => ({
+    template: '<div style="margin: 5em; border: 1px solid; border-color: white"><story /></div>'
+  })
+]
 
 export const globalTypes = {}
