@@ -1,6 +1,7 @@
 import SignUpForm from './SignUpForm.vue';
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { userEvent, within } from '@storybook/testing-library';
+import {expect} from '@storybook/jest'
 
 type Story = StoryObj<typeof SignUpForm>;
 
@@ -30,6 +31,10 @@ export const Complete: Story = {
     await userEvent.clear(ageInput);
     await userEvent.type(ageInput, '30');
     await userEvent.click(submitButton);
+
+    // エラーメッセージが表示されていないことをアサート
+    expect(canvas.queryByText('名前は必須です')).toBeNull();
+    expect(canvas.queryByText('18歳未満は登録できません')).toBeNull();
   }
 }
 

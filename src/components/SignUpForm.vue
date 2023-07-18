@@ -15,7 +15,7 @@ const emits = defineEmits<{
 }>();
 
 const onSubmit = () => {
-  errors.name = state.name === "" ? "名前を入力してください" : "";
+  errors.name = state.name !== "" ? "名前を入力してください" : "";
   errors.age = state.age < 18 ? "18歳未満は登録できません" : "";
 
   if (errors.name === "" && errors.age === "") {
