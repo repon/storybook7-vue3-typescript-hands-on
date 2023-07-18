@@ -10,6 +10,21 @@ setup((app) => {
 
 export const parameters: Parameters = {}
 
-export const decorators: Decorator[] = []
+export const decorators: Decorator[] = [
+  (story, context) => {
+    i18n.global.locale = context.globals.locale;
+    return { template: '<story />' }
+  },
+]
 
-export const globalTypes = {}
+export const globalTypes = {
+  locale: {
+    name: "Locale",
+    description: "多言語設定",
+    defaultValue: "ja",
+    toolbar: {
+      icon: "globe",
+      items: ["ja", "en"]
+    }
+  }
+}
