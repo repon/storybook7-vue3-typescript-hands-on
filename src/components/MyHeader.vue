@@ -12,14 +12,26 @@ const emits = defineEmits(["login", "signUp", "logout"]);
 
 <template>
   <header>
-    <h1>Storybook 7 + Vue 3 + Typescript サンプル</h1>
+    <h1>{{ $t("header.title") }}</h1>
     <div class="buttons">
       <template v-if="props.isLoggedIn">
-        <MyButton size="small" label="ログアウト" @click="emits('logout')" />
+        <MyButton
+          size="small"
+          :label="$t('header.logout')"
+          @click="emits('logout')"
+        />
       </template>
       <template v-else>
-        <MyButton size="small" label="ログイン" @click="emits('login')" />
-        <MyButton size="small" label="新規登録" @click="emits('signUp')" />
+        <MyButton
+          size="small"
+          :label="$t('header.login')"
+          @click="emits('login')"
+        />
+        <MyButton
+          size="small"
+          :label="$t('header.signup')"
+          @click="emits('signUp')"
+        />
       </template>
     </div>
   </header>
